@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 14:01:58 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/01 21:41:17 by abilal           ###   ########.fr       */
+/*   Created: 2024/07/04 09:42:14 by abilal            #+#    #+#             */
+/*   Updated: 2024/07/07 20:10:26 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while ( str[i] != '\0')
+void	ffwrite(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		if ( !((str[i] >= 'a' && str[i] <= 'z') ||  (str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			return (0);
-		}
-		i++;
+		ffwrite('-');
+		ffwrite('2');
+		ft_putnbr(147483648);
 	}
-	return (1);
+	else if (nb < 0)
+	{
+		ffwrite('-');
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ffwrite(nb + '0');
 }
