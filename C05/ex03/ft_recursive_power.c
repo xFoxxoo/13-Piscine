@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/07 20:11:24 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/09 11:24:19 by abilal           ###   ########.fr       */
+/*   Created: 2024/07/09 11:50:47 by abilal            #+#    #+#             */
+/*   Updated: 2024/07/09 14:45:10 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_recursive_power(int nb, int power)
 {
 	int	i;
-	int	j;
-	int	k;
 
-	i = 0;
-	j = 1;
-	k = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-	{
-		i++;
-	}
-	while (str[i] && (str[i] == '+' || str[i] == '-'))
-	{
-		if (str[i] == '-')
-		{
-			j *= -1;
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		k = k * 10 + str[i] - '0';
-		i++;
-	}
-	return (k * j);
+	if (power == 0)
+		return (1);
+	if (power < 0)
+		return (0);
+	if (power == 1)
+		return (nb);
+	i = power;
+	return (nb * ft_recursive_power(nb, power - 1));
 }
