@@ -6,15 +6,24 @@
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 19:57:17 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/09 20:03:25 by abilal           ###   ########.fr       */
+/*   Updated: 2024/07/10 13:44:36 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-	int	test;
-	if 
-	while (test * test != nb)
-		test++;
-	return (nb);
+	int	i;
+
+	i = 2;
+	if (nb == 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (i * i <= nb)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }
