@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   aff_a_last.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 17:06:54 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/17 11:36:56 by abilal           ###   ########.fr       */
+/*   Created: 2024/07/16 21:11:14 by abilal            #+#    #+#             */
+/*   Updated: 2024/07/16 21:23:13 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include <unistd.h>
 
-typedef struct t_point
+int	main(int ac, char **av)
 {
-	int	x;
-	int	y;
-}	t_point;
-
-#endif
+	int	i = 0;
+	
+	if (ac != 2)
+	{
+		write (1, "a", 1);
+		return (0);
+	}
+	while (av[1][i++] && ac == 2)
+	{
+		if (av[1][i] == 'a')
+		{
+			write(1, "a", 1);
+			break ;
+		}
+	}
+	write (1, "\n", 1);
+}

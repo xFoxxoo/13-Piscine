@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   last.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 10:41:45 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/17 13:45:35 by abilal           ###   ########.fr       */
+/*   Created: 2024/07/16 21:24:27 by abilal            #+#    #+#             */
+/*   Updated: 2024/07/16 21:36:04 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
-# define FT_BOOLEAN_H
+#include <unistd.h>
 
-# include <unistd.h>
+void	ft_putstr(char *str)
+{
+	int	i = 0;
+	while (str[i])
+	{
+		write (1, &str[i], 1);
+	i++;
+	}
+}
 
-# define SUCCESS 0
-# define FALSE 0
-# define TRUE 1
-
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-
-# define EVEN(nbr) (nbr % 2 == 0)
-
-typedef int	t_bool;
-
-void		ft_putstr(char *str);
-t_bool		ft_is_even(int nbr);
-
-#endif
+int	main(int ac, char **av)
+{
+	if (ac > 1)
+	{
+		ft_putstr(av[ac - 1]);
+	}
+	write (1, "\n", 1);
+}

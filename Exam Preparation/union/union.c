@@ -6,12 +6,12 @@
 /*   By: abilal <abilal@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 09:27:24 by abilal            #+#    #+#             */
-/*   Updated: 2024/07/12 09:45:13 by abilal           ###   ########.fr       */
+/*   Updated: 2024/07/12 10:48:39 by abilal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
+/*
 int	kayn(char *str, char c)
 {
 	int	i;
@@ -46,7 +46,9 @@ void	uni(char *s1, char *s2, char *storage)
 		}
 		i++;
 	}
-}
+}*/
+
+
 
 int	main(int ac, char **av)
 {
